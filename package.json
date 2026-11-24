@@ -1,0 +1,16 @@
+{
+  "name": "calculosena",
+  "version": "1.0.0",
+  "description": "Cálculo geométrico y cotización de fachada arquitectónica",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "express": "^5.3.0"
+  }
+}

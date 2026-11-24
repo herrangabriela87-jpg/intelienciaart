@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Planteamiento de Ecuación | SENA</title>
+  <link rel="stylesheet" href="styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800;900&display=swap" rel="stylesheet">
+</head>
+<body>
+  <main class="canvas-wrapper">
+    
+    <!-- SLIDE PRINCIPAL (HERO - Referencia superior) -->
+    <section class="slide hero-slide">
+      <header class="slide-header">
+        <div class="brand">
+          <span class="bar"></span>
+          <strong>SENA<br>ADSO 3465955</strong>
+        </div>
+        <nav class="top-nav">
+          <span>Geometría</span>
+          <span>Álgebra</span>
+          <span>Cotización</span>
+        </nav>
+      </header>
+
+      <div class="hero-center">
+        <div class="big-number" id="hero-area">432</div>
+        <div class="tag-group">
+          <span class="black-box">M²</span>
+          <span class="black-box">ÁREA</span>
+          <span class="black-box">TOTAL</span>
+        </div>
+        
+        <!-- Ilustración SVG Isométrica de la fachada del documento -->
+        <div class="building-graphic">
+          <svg viewBox="0 0 300 180" width="260" height="160">
+            <!-- Techo -->
+            <polygon points="150,20 280,75 150,130 20,75" fill="#4A5568"/>
+            <!-- Pared Frontal (3x) -->
+            <polygon points="20,75 150,130 150,175 20,120" fill="#8B93D1"/>
+            <!-- Pared Lateral (x) -->
+            <polygon points="150,130 280,75 280,120 150,175" fill="#6B73B5"/>
+            <!-- Ventanas decorativas -->
+            <rect x="45" y="95" width="12" height="8" transform="skewY(23)" fill="#3182CE"/>
+            <rect x="75" y="95" width="12" height="8" transform="skewY(23)" fill="#3182CE"/>
+            <rect x="105" y="95" width="12" height="8" transform="skewY(23)" fill="#3182CE"/>
+            <rect x="45" y="112" width="12" height="8" transform="skewY(23)" fill="#3182CE"/>
+            <rect x="75" y="112" width="12" height="8" transform="skewY(23)" fill="#3182CE"/>
+            <rect x="105" y="112" width="12" height="8" transform="skewY(23)" fill="#3182CE"/>
+          </svg>
+        </div>
+
+        <div class="hero-quote">
+          <p>“CÁLCULO<br>DE FACHADA<br><strong>EXTERIOR.”</strong></p>
+        </div>
+
+        <div class="hero-badge">
+          <span class="black-box">96 m</span> Perímetro<br>
+          <span class="black-box">3x</span> Proporción Base
+        </div>
+      </div>
+
+      <footer class="slide-footer">
+        <div>
+          <span class="bar"></span>
+          <strong>GABRIELA HERRÁN VELA</strong>
+        </div>
+        <span class="date">2026.11.24</span>
+      </footer>
+      <div class="vertical-text">SENA • ANÁLISIS Y DESARROLLO</div>
+    </section>
+
+    <!-- GRILLA 2x2 (Referencia inferior) -->
+    <section class="grid-slides">
+      
+      <!-- TARJETA 1: PARÁMETROS (1°) -->
+      <article class="slide card-slide">
+        <div class="card-left">
+          <span class="mini-label">Parámetros de entrada</span>
+          <h2 class="step-number">1°</h2>
+          <h3 class="step-title">VARIABLES</h3>
+          <form id="calc-form" class="editorial-form">
+            <label>Perímetro (P en metros)
+              <input type="number" id="perimetro" value="96" required>
+            </label>
+            <label>Relación Base / Altura (k)
+              <input type="number" id="proporcion" value="3" required>
+            </label>
+            <label>Costo m² Piedra Sintética (COP)
+              <input type="number" id="costoM2" value="80000" required>
+            </label>
+            <label>Costo Fijo Instalación (COP)
+              <input type="number" id="costoFijo" value="4500000" required>
+            </label>
+            <button type="submit" class="btn-black">RECALCULAR</button>
+          </form>
+        </div>
+        <div class="card-right accent-terracotta">
+          <div class="geometric-preview">
+            <div class="rect-diagram">
+              <span class="dim-top" id="diag-base">b = 36m (3x)</span>
+              <span class="dim-side" id="diag-altura">h = 12m (x)</span>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- TARJETA 2: ECUACIÓN Y DESPEJE (03) -->
+      <article class="slide card-slide">
+        <div class="card-left">
+          <span class="mini-label">Planteamiento Algebraico</span>
+          <h2 class="step-number">02</h2>
+          <h3 class="step-title">ECUACIÓN</h3>
+          <p class="math-text" id="res-ecuacion">2(3x) + 2(x) = 96</p>
+          <p class="math-text bold" id="res-despeje">8x = 96 &rarr; x = 12</p>
+        </div>
+        <div class="card-right split-boxes">
+          <div class="stat-box cobalt">
+            <span>ALTURA (h)</span>
+            <strong id="res-altura">12 m</strong>
+          </div>
+          <div class="stat-box dark">
+            <span>BASE (b)</span>
+            <strong id="res-base">36 m</strong>
+          </div>
+        </div>
+      </article>
+
+      <!-- TARJETA 3: ÁREA GEOMÉTRICA -->
+      <article class="slide card-slide">
+        <div class="card-left two-cols">
+          <div>
+            <span class="black-tag">FÓRMULA</span>
+            <h4>ÁREA RECTÁNGULO</h4>
+            <p>A = b &middot; h</p>
+            <p id="res-formula-sub">A = 36 &middot; 12</p>
+          </div>
+          <div>
+            <span class="black-tag">RESULTADO</span>
+            <h4>SUPERFICIE</h4>
+            <p class="highlight-val" id="res-area">432 m²</p>
+          </div>
+        </div>
+        <div class="card-right accent-sand">
+          <h3 class="overlay-title">GEOMETRÍA<br><small>Descomposición plana</small></h3>
+        </div>
+      </article>
+
+      <!-- TARJETA 4: COTIZACIÓN FINAL (CONTENT) -->
+      <article class="slide card-slide">
+        <div class="card-left">
+          <span class="mini-label">Presupuesto de Obra</span>
+          <h3 class="content-title">COSTOS</h3>
+          <div class="cost-grid">
+            <div>
+              <span class="cost-idx">01</span>
+              <small>MATERIAL (m²)</small>
+              <p id="res-material">$ 34.560.000</p>
+            </div>
+            <div>
+              <span class="cost-idx">02</span>
+              <small>COSTO FIJO</small>
+              <p id="res-fijo">$ 4.500.000</p>
+            </div>
+            <div>
+              <span class="cost-idx">03</span>
+              <small>TOTAL COP</small>
+              <p class="total-cop" id="res-total">$ 39.060.000</p>
+            </div>
+          </div>
+        </div>
+        <div class="card-right accent-cobalt-dark">
+          <div class="invoice-stamp">
+            <span>COTIZACIÓN</span>
+            <strong>APROBADA</strong>
+          </div>
+        </div>
+      </article>
+
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
